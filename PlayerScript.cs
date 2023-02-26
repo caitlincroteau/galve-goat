@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-
+    private bool paintCan = false;
     public float playerSpeed = 10;
     // Start is called before the first frame update
     void Start()
@@ -22,4 +22,13 @@ public class PlayerScript : MonoBehaviour
 
         transform.position += change;
     }
+
+    public bool hasPaintCan () {
+        return paintCan;
+    }
+
+    public void setPaintCan (bool canValue) {
+        paintCan = canValue;
+    }
+
 }
