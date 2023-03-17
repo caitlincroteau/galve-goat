@@ -16,6 +16,10 @@ public class Mayor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       Move();
+    }
+
+    void Move() {
         float playerX = playerLocation.position.x;
         float playerY = playerLocation.position.y;
 
@@ -32,7 +36,6 @@ public class Mayor : MonoBehaviour
 
         //apply delta to mayor's positon
         gameObject.transform.position += deltaPosition;
-
     }
 }
 

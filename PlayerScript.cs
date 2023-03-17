@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     private bool paintCan = false;
+    private bool goatKey = false;
     public float playerSpeed = 10;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,14 @@ public class PlayerScript : MonoBehaviour
 
     public void setPaintCan (bool canValue) {
         paintCan = canValue;
+    }
+    public bool hasGoatKey () {
+        return goatKey;
+    }
+
+    public void setGoatKey (bool goatKeyValue) {
+        goatKey = goatKeyValue;
+        Debug.Log("GOAT");
     }
 
 }

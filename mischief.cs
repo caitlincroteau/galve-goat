@@ -31,6 +31,18 @@ public class mischief : MonoBehaviour
                     graffiti.SetActive(true);
                     Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                 }
+            } else if (this.gameObject.tag == "Mayor") {   
+                transform.Rotate(0,0,-90);
+                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+                Destroy(this.gameObject.GetComponent<Mayor>());
+                player.setGoatKey(true);
+            
+            } else if (this.gameObject.tag == "Gate") {
+                if(player.hasGoatKey()){
+                    SpriteRenderer spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+                    spriteRenderer.color = new UnityEngine.Color(1f, 0f, 1f, 1f);
+                    //change scene
+                }
             }
 
         }
