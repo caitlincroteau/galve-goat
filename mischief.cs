@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mischief : MonoBehaviour
 
@@ -11,6 +12,9 @@ public class mischief : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
        if(other.gameObject.tag == "Player"){
 
+            SceneManager.LoadScene ("Scene 2");
+            
+            
             Debug.Log("Collide");
             PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
 
