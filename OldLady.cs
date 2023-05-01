@@ -8,9 +8,9 @@ public class OldLady : MonoBehaviour
     Vector3 velocity = Vector3.zero;
     
     
-    float decisionTimer = .5f;
-    float decisionCountdown = 0f;
-
+    float decisionTimer = 0.5f;
+    float decisionCountdown = 3f;
+    bool walkingOn = true;
     public float oddsToStop = 0.1f;
 
     public float xWall = 9.5f;
@@ -18,7 +18,7 @@ public class OldLady : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       decide(); 
+       velocity = Vector3.right;
     }
 
     // Update is called once per frame
@@ -26,10 +26,11 @@ public class OldLady : MonoBehaviour
     {
         decisionCountdown -= Time.deltaTime;
         if(decisionCountdown <= 0f){
+            walkingOn = false;
             decide();
         }
         transform.position += velocity * Time.deltaTime;
-        checkBoundaries();
+        if(!walkingOn) checkBoundaries();
     }
 
     void decide(){

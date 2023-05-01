@@ -5,12 +5,12 @@ using UnityEngine;
 public class Mayor : MonoBehaviour
 
 {
-    public Transform playerLocation;
+    private Transform playerLocation;
     public float speed = 8;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame

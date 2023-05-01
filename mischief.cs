@@ -18,7 +18,8 @@ public class mischief : MonoBehaviour
                 transform.Rotate(0,0,-90);
                 Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                 //add script for creating old lady
-                // Instantiate(nextMischief, transform.position, transform.rotation);      
+                Instantiate(nextMischief, new Vector3(-10,2,0), Quaternion.identity);      
+                
             } else if (this.gameObject.tag == "Old Lady") {
                 transform.Rotate(0,0,-90);
                 Destroy(this.gameObject.GetComponent<BoxCollider2D>());
@@ -30,6 +31,7 @@ public class mischief : MonoBehaviour
                     GameObject graffiti = this.gameObject.transform.GetChild(0).gameObject;
                     graffiti.SetActive(true);
                     Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+                    Instantiate(nextMischief, new Vector3(0,0,0), Quaternion.identity);  
                 }
             } else if (this.gameObject.tag == "Mayor") {   
                 transform.Rotate(0,0,-90);
