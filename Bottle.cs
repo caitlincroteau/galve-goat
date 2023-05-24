@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bottle : MonoBehaviour
 {
@@ -27,5 +28,10 @@ public class Bottle : MonoBehaviour
        
         Instantiate(fire, transform.position, transform.rotation);
         Destroy(this.gameObject);
+        if(other.gameObject.tag == "Goat") {
+            SceneManager.LoadScene ("Scene 3");
+        }
+        //change scene
+        
     }
 }
