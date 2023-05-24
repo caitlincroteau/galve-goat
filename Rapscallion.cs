@@ -5,12 +5,6 @@ using UnityEngine;
 public class Rapscallion : MonoBehaviour
 {
     public float playerSpeed = 3f;
-    public GameObject bottle;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -21,12 +15,7 @@ public class Rapscallion : MonoBehaviour
 
         transform.position += change;
 
-        if(Input.GetKeyDown("space")){
-            ThrowBottle();
-        }
+
     }
 
-    void ThrowBottle() {
-        Instantiate(bottle, transform.position, transform.rotation);
-    }
 }

@@ -12,8 +12,7 @@ public class mischief : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
        if(other.gameObject.tag == "Player"){
 
-            SceneManager.LoadScene ("Scene 2");
-            
+
             
             Debug.Log("Collide");
             PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
@@ -48,6 +47,8 @@ public class mischief : MonoBehaviour
                     SpriteRenderer spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
                     spriteRenderer.color = new UnityEngine.Color(1f, 0f, 1f, 1f);
                     //change scene
+                    SceneManager.LoadScene ("Scene 2");
+            
                 }
             }
 
